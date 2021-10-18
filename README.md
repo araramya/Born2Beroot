@@ -40,3 +40,36 @@ sudo ufw enable
 sudo ufw allow 4242
 systemctl restart ufw
 systemctl ufw status
+
+     
+2.4. PASSWORDS
+     sudo vim /etc/login.defs
+     PassMaxDays 30
+     PassMinDays 2
+     PassWarning 7
+     sudo apt install libpam -pwquality
+     and in common password configs you need to add this rules
+     minlen - minimum length of the password
+     ucredit - uppercase count
+     dcredit - digits count
+     maxrepeat - maximum numbers of identifical characters
+     reject_username - you can't use your username as a password
+     difok - difference from old password
+     enforce_for_root - enforce writen rules for root password
+    
+2.5. NEW_GROUPS AND USERS
+     sudo adduser <username>
+     sudo addgroup <group_name>
+     gpasswd -d <username> <group_name> - remove user from group
+     sudo chage -l <username> - get information about password policy of user
+     
+2.6. SUDO_CONFIGURATIONS
+     Go through link below there is a lot of information about this.
+     https://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/
+     
+     
+2.7. sudo crontab - u root -e to open crontab.
+     
+     
+     
+if you have questions you can write me. arsen.aramyan2001@gmail.com
